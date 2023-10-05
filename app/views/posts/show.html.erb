@@ -1,0 +1,14 @@
+<div class="m-5">
+  <%= render @post %>
+  
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h3>Comments:</h3>
+    <%= link_to "New comment", new_post_comment_path(@post), class: "btn btn-primary" %>
+  </div>
+
+  <div class="list-group">
+    <% @post.comments.each do |comment| %>
+      <%= render "comments/comment", comment: comment %>
+    <% end %>
+  </div>
+</div>
